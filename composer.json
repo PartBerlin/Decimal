@@ -1,0 +1,34 @@
+{
+    "name": "partberlin/module-decimal",
+    "description": "Decimal attribute types for Magento2",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "require": {
+        "php": "~5.6.0|~7.0.0",
+        "magento/module-catalog": "100.0.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.3",
+        "phpmd/phpmd": "^2.4",
+        "squizlabs/php_codesniffer": "^2.6",
+        "sebastian/phpcpd": "^2.0",
+        "satooshi/php-coveralls": "^1.0"
+    },
+    "type": "magento2-module",
+    "scripts": {
+        "test": "phpunit"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Part\\Decimal\\": ""
+        }
+    }
+}
