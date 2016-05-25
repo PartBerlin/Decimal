@@ -15,5 +15,6 @@
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
     <file>Model</file>
     <file>Observer</file>
+    <file>Plugin</file>
     <file>Test</file>
 </ruleset>
