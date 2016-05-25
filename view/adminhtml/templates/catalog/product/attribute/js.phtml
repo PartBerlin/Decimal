@@ -1,0 +1,34 @@
+<?php
+/**
+ * Copyright © PART <info@part-online.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+?>
+<script>
+require(["jquery", "prototype"], function(jQuery) {
+    jQuery(function(){
+        setTimeout(function() {
+            var frontendInput = $('frontend_input');
+
+            function bindAttributeInputType() {
+                var isFilterable = $('is_filterable'),
+                    isFilterableInSearch = $('is_filterable_in_search');
+                if (frontendInput && frontendInput.value === 'decimal') {
+                    if (isFilterable) {
+                        isFilterable.disabled = false;
+                    }
+                    if (isFilterableInSearch) {
+                        isFilterableInSearch.disabled = false;
+                    }
+                }
+            }
+            if(frontendInput){
+                Event.observe(frontendInput, 'change', bindAttributeInputType);
+            }
+            bindAttributeInputType();
+        }, 1000);
+    });
+});
+</script>
