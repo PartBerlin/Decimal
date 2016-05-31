@@ -9,6 +9,7 @@
 <script>
 require(["jquery", "prototype"], function(jQuery) {
     jQuery(function(){
+        var isFilterableSelectedIndex = $('is_filterable').selectedIndex;
         setTimeout(function() {
             var frontendInput = $('frontend_input');
 
@@ -17,6 +18,7 @@ require(["jquery", "prototype"], function(jQuery) {
                     isFilterableInSearch = $('is_filterable_in_search');
                 if (frontendInput && frontendInput.value === 'decimal') {
                     if (isFilterable) {
+                        isFilterable.selectedIndex = isFilterableSelectedIndex;
                         isFilterable.disabled = false;
                     }
                     if (isFilterableInSearch) {
