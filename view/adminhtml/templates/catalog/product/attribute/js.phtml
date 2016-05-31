@@ -15,11 +15,19 @@ require(["jquery", "prototype"], function(jQuery) {
 
             function bindAttributeInputType() {
                 var isFilterable = $('is_filterable'),
-                    isFilterableInSearch = $('is_filterable_in_search');
+                    isFilterableInSearch = $('is_filterable_in_search'),
+                    position = $('position');
                 if (frontendInput && frontendInput.value === 'decimal') {
                     if (isFilterable) {
                         isFilterable.selectedIndex = isFilterableSelectedIndex;
                         isFilterable.disabled = false;
+                        if (isFilterable.selectedIndex == 0) {
+                            position.disabled = true;
+                        } else {
+                            if (!position.getAttribute('readonly')) {
+                                position.disabled = false;
+                            }
+                        }
                     }
                     if (isFilterableInSearch) {
                         isFilterableInSearch.disabled = false;
