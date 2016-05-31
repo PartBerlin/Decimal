@@ -62,12 +62,20 @@ class AttributeTest extends \PHPUnit_Framework_TestCase
             [
                 ['frontend_input' => 'decimal'],
                 1,
-                ['frontend_input' => 'decimal', 'backend_type' => 'decimal'],
+                [
+                    'frontend_input' => 'decimal',
+                    'backend_type' => 'decimal',
+                    'frontend_input_renderer' => '\Magento\Framework\Data\Form\Element\Text'
+                ],
             ],
             [
                 ['frontend_input' => 'decimal', 'backend_type' => 'static'],
                 1,
-                ['frontend_input' => 'decimal', 'backend_type' => 'decimal'],
+                [
+                    'frontend_input' => 'decimal',
+                    'backend_type' => 'decimal',
+                    'frontend_input_renderer' => '\Magento\Framework\Data\Form\Element\Text'
+                ],
             ],
         ];
     }

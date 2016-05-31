@@ -15,6 +15,7 @@ class Attribute
         if (isset($data['frontend_input']) &&
             $data['frontend_input'] === \Part\Decimal\Model\Decimal::DECIMAL_TYPE_ATTRIBUTE_FRONTEND_INPUT) {
             $data['backend_type'] = 'decimal';
+            $data['frontend_input_renderer'] = '\Magento\Framework\Data\Form\Element\Text';
             $subject->setData($data);
         }
     }
