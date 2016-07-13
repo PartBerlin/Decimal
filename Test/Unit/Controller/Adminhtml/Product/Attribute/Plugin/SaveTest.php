@@ -14,26 +14,24 @@ class SaveTest extends \PHPUnit_Framework_TestCase
      */
     public function testBeforeDispatch($dataRequest, $runTimes)
     {
-        $subject = $this->getMock('\Magento\Catalog\Controller\Adminhtml\Product\Attribute\Save', [], [], '', false);
-        $request = $this->getMock(
-            '\Magento\Framework\App\RequestInterface',
-            [
-                'getPostValue',
-                'setPostValue',
-                'getModuleName',
-                'setModuleName',
-                'getActionName',
-                'setActionName',
-                'getParam',
-                'setParams',
-                'getParams',
-                'getCookie',
-                'isSecure'
-            ],
-            [],
-            '',
-            false
-        );
+        $subject = $this->createMock('\Magento\Catalog\Controller\Adminhtml\Product\Attribute\Save');
+        $request = $this->getMockBuilder('\Magento\Framework\App\RequestInterface')
+            ->setMethods(
+                [
+                    'getPostValue',
+                    'setPostValue',
+                    'getModuleName',
+                    'setModuleName',
+                    'getActionName',
+                    'setActionName',
+                    'getParam',
+                    'setParams',
+                    'getParams',
+                    'getCookie',
+                    'isSecure',
+                ]
+            )
+            ->getMock();
 
         $objectManager = new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($this);
         $controller = $objectManager->getObject('\Part\Decimal\Controller\Adminhtml\Product\Attribute\Plugin\Save');

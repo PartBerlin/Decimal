@@ -15,13 +15,10 @@ class AttributeTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->attributeMock = $this->getMock(
-            '\Magento\Catalog\Model\ResourceModel\Eav\Attribute',
-            ['getData', 'setData'],
-            [],
-            '',
-            false
-        );
+        $this->attributeMock = $this->getMockBuilder('\Magento\Catalog\Model\ResourceModel\Eav\Attribute')
+            ->setMethods(['getData', 'setData'])
+            ->disableAutoload()
+            ->getMock();
         $objectManager = new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($this);
         $this->attributePlugin = $objectManager->getObject(
             'Part\Decimal\Plugin\Catalog\Model\ResourceModel\Eav\Attribute',
