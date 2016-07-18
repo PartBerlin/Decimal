@@ -17,7 +17,7 @@ require(["jquery", "prototype"], function(jQuery) {
                 var isFilterable = $('is_filterable'),
                     isFilterableInSearch = $('is_filterable_in_search'),
                     position = $('position');
-                if (frontendInput && frontendInput.value === 'decimal') {
+                if (frontendInput && frontendInput.value === 'number') {
                     if (isFilterable) {
                         isFilterable.selectedIndex = isFilterableSelectedIndex;
                         isFilterable.disabled = false;

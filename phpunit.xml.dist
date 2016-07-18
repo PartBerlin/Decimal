@@ -17,7 +17,6 @@
     </testsuite>
     <filter>
         <whitelist>
-            <directory suffix=".php">./Controller</directory>
             <directory suffix=".php">./Model</directory>
             <directory suffix=".php">./Observer</directory>
             <directory suffix=".php">./Plugin</directory>

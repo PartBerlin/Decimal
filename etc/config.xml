@@ -12,7 +12,7 @@
         <general>
             <validator_data>
                 <input_types>
-                    <decimal>decimal</decimal>
+                    <number>number</number>
                 </input_types>
             </validator_data>
         </general>

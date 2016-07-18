@@ -9,7 +9,5 @@ namespace Part\Decimal\Model;
 
 class Decimal
 {
-    const DECIMAL_TYPE_ATTRIBUTE_FRONTEND_INPUT = 'decimal';
-
-    const DECIMAL_INPUT_TYPE_KEY = 'decimal_input_type';
+    const DECIMAL_TYPE_ATTRIBUTE_FRONTEND_INPUT = 'number';
 }
