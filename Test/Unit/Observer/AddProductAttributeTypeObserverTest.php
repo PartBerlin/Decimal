@@ -15,14 +15,18 @@ class AddProductAttributeTypeObserverTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->eventObserverMock = $this->getMock('\Magento\Framework\Event\Observer', ['getResponse'], [], '', false);
+        $this->eventObserverMock = $this->getMockBuilder('\Magento\Framework\Event\Observer')
+            ->setMethods(['getResponse'])
+            ->getMock();
         $objectManager = new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($this);
         $this->observer = $objectManager->getObject('Part\Decimal\Observer\AddProductAttributeTypeObserver', []);
     }
 
     public function testExecute()
     {
-        $responseMock = $this->getMock('\Magento\Framework\DataObject', ['getTypes', 'setTypes'], [], '', false);
+        $responseMock = $this->getMockBuilder('\Magento\Framework\DataObject')
+            ->setMethods(['getTypes', 'setTypes'])
+            ->getMock();
         $responseMock
             ->expects($this->once())
             ->method('getTypes')

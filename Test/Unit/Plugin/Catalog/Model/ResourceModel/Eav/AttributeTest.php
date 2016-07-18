@@ -15,13 +15,10 @@ class AttributeTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->attributeMock = $this->getMock(
-            '\Magento\Catalog\Model\ResourceModel\Eav\Attribute',
-            ['getData', 'setData'],
-            [],
-            '',
-            false
-        );
+        $this->attributeMock = $this->getMockBuilder('\Magento\Catalog\Model\ResourceModel\Eav\Attribute')
+            ->setMethods(['getData', 'setData'])
+            ->disableAutoload()
+            ->getMock();
         $objectManager = new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($this);
         $this->attributePlugin = $objectManager->getObject(
             'Part\Decimal\Plugin\Catalog\Model\ResourceModel\Eav\Attribute',
@@ -60,19 +57,19 @@ class AttributeTest extends \PHPUnit_Framework_TestCase
                 [],
             ],
             [
-                ['frontend_input' => 'decimal'],
+                ['frontend_input' => 'number'],
                 1,
                 [
-                    'frontend_input' => 'decimal',
+                    'frontend_input' => 'number',
                     'backend_type' => 'decimal',
                     'frontend_input_renderer' => '\Magento\Framework\Data\Form\Element\Text'
                 ],
             ],
             [
-                ['frontend_input' => 'decimal', 'backend_type' => 'static'],
+                ['frontend_input' => 'number', 'backend_type' => 'static'],
                 1,
                 [
-                    'frontend_input' => 'decimal',
+                    'frontend_input' => 'number',
                     'backend_type' => 'decimal',
                     'frontend_input_renderer' => '\Magento\Framework\Data\Form\Element\Text'
                 ],
