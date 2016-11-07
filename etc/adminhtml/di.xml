@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © PART <info@part-online.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Ui\DataProvider\Modifier\PoolInterface" type="Magento\Ui\DataProvider\Modifier\Pool"/>
+    <type name="Magento\Ui\DataProvider\Mapper\FormElement">
+        <arguments>
+            <argument name="mappings" xsi:type="array">
+                <item name="number" xsi:type="string">input</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
